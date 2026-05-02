@@ -1,7 +1,11 @@
 import { Money } from "../value-objects/money.vo";
 import { InvalidOrderStateException } from "./invalid-order-state.exception";
 
-// la clase OrderItem representa un artículo específico en una orden, con detalles como el ID del producto, el nombre del producto, la cantidad, el precio unitario y el subtotal. Esta clase es fundamental para calcular el total de la orden y para gestionar las actualizaciones de cantidad de los artículos en el carrito de compras. Además, incluye validaciones para asegurar que la cantidad sea mayor a cero, lo que ayuda a mantener la integridad de los datos en el sistema de pedidos.
+// la clase OrderItem representa un artículo específico en una orden, con detalles como el 
+// ID del producto, el nombre del producto, la cantidad, el precio unitario y el subtotal. 
+// Esta clase es fundamental para calcular el total de la orden y para gestionar las actualizaciones 
+// de cantidad de los artículos en el carrito de compras. Además, incluye validaciones para asegurar que 
+// la cantidad sea mayor a cero, lo que ayuda a mantener la integridad de los datos en el sistema de pedidos.
 export class OrderItem{
     public readonly productId: string;
     public readonly productName: string;
