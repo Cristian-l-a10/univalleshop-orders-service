@@ -1,9 +1,9 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { ORDER_RESPOSITORY } from "src/domain/repositories/order-repository.interface";
-import type { IOrderRepository } from "src/domain/repositories/order-repository.interface";
-import { Order } from "src/domain/entities/order.entity";
+import { ORDER_RESPOSITORY } from "src/orders/domain/repositories/order-repository.interface";
+import type { IOrderRepository } from "src/orders/domain/repositories/order-repository.interface";
+import { Order } from "src/orders/domain/entities/order.entity";
 import { GetOrderDetailDto } from "../dto/get-order-detail.dto";
-import { InvalidOrderStateException } from "src/domain/entities/invalid-order-state.exception";
+import { InvalidOrderStateException } from "src/orders/domain/entities/invalid-order-state.exception";
 
 //esta clase es un caso de uso que se encarga de obtener el historial de órdenes de un usuario, así como los detalles de una orden específica.
 @Injectable()

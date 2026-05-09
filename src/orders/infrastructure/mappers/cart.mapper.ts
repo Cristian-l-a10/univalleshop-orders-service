@@ -1,6 +1,6 @@
-import { Cart } from "src/domain/entities/cart.entity";
-import { OrderItem } from "src/domain/entities/order-item.entity";
-import { Money } from "src/domain/value-objects/money.vo";
+import { Cart } from "src/orders/domain/entities/cart.entity";
+import { OrderItem } from "src/orders/domain/entities/order-item.entity";
+import { Money } from "src/orders/domain/value-objects/money.vo";
 import { CartDocument } from "../persistence/order.schema";
 
 //esta clase es responsable de mapear entre los documentos de MongoDB (CartDocument) y las entidades de dominio (Cart).

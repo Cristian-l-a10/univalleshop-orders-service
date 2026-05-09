@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  ms-orders:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ms-orders
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    external: true

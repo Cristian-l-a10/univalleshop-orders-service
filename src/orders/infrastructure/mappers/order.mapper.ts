@@ -1,7 +1,7 @@
-import { Order } from "src/domain/entities/order.entity";
-import { OrderItem } from "src/domain/entities/order-item.entity";
-import { Money } from "src/domain/value-objects/money.vo";
-import { OrderStatus, OrderStatusVO } from "src/domain/value-objects/order-status.vo";
+import { Order } from "src/orders/domain/entities/order.entity";
+import { OrderItem } from "src/orders/domain/entities/order-item.entity";
+import { Money } from "src/orders/domain/value-objects/money.vo";
+import { OrderStatus, OrderStatusVO } from "src/orders/domain/value-objects/order-status.vo";
 import { OrderDocument } from "../persistence/order.schema";
 
 //esta clase es responsable de mapear entre los documentos de MongoDB (OrderDocument) y las entidades de dominio (Order).

@@ -1,11 +1,11 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { ORDER_RESPOSITORY } from "src/domain/repositories/order-repository.interface";
-import type { IOrderRepository } from "src/domain/repositories/order-repository.interface";
-import { CATALOG_CLIENT } from "src/domain/repositories/catalog-client.interface";
-import type { ICatalogClient } from "src/domain/repositories/catalog-client.interface";
+import { ORDER_RESPOSITORY } from "src/orders/domain/repositories/order-repository.interface";
+import type { IOrderRepository } from "src/orders/domain/repositories/order-repository.interface";
+import { CATALOG_CLIENT } from "src/orders/domain/repositories/catalog-client.interface";
+import type { ICatalogClient } from "src/orders/domain/repositories/catalog-client.interface";
 import { UpdateCartItemDto } from "../dto/update-cart-item.dto";
-import { Cart } from "src/domain/entities/cart.entity";
-import { InvalidOrderStateException } from "src/domain/entities/invalid-order-state.exception";
+import { Cart } from "src/orders/domain/entities/cart.entity";
+import { InvalidOrderStateException } from "src/orders/domain/entities/invalid-order-state.exception";
 
 //esta clase es un caso de uso que se encarga de actualizar los items en el carrito de compras de un usuario.
 @Injectable()

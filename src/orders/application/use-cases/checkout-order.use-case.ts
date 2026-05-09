@@ -1,13 +1,13 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { ORDER_RESPOSITORY } from "src/domain/repositories/order-repository.interface";
-import type { IOrderRepository } from "src/domain/repositories/order-repository.interface";
-import { CATALOG_CLIENT } from "src/domain/repositories/catalog-client.interface";
-import type { ICatalogClient } from "src/domain/repositories/catalog-client.interface";
-import { USER_CLIENT } from "src/domain/repositories/user-client.interface";
-import type { IUserClient } from "src/domain/repositories/user-client.interface";
+import { ORDER_RESPOSITORY } from "src/orders/domain/repositories/order-repository.interface";
+import type { IOrderRepository } from "src/orders/domain/repositories/order-repository.interface";
+import { CATALOG_CLIENT } from "src/orders/domain/repositories/catalog-client.interface";
+import type { ICatalogClient } from "src/orders/domain/repositories/catalog-client.interface";
+import { USER_CLIENT } from "src/orders/domain/repositories/user-client.interface";
+import type { IUserClient } from "src/orders/domain/repositories/user-client.interface";
 import { CheckoutOrderDto } from "../dto/checkout-order.dto";
-import { Order } from "src/domain/entities/order.entity";
-import { InvalidOrderStateException } from "src/domain/entities/invalid-order-state.exception";
+import { Order } from "src/orders/domain/entities/order.entity";
+import { InvalidOrderStateException } from "src/orders/domain/entities/invalid-order-state.exception";
 
 //esta clase es un caso de uso que se encarga de procesar el checkout de una orden, es decir, convertir el carrito de compras de un usuario en una orden finalizada.
 @Injectable()
@@ -24,7 +24,7 @@ export class CheckOutOrderUseCase{
     ){}
 
     //el método execute es el método principal del caso de uso, que recibe un DTO con la información necesaria para realizar el checkout de una orden. 
-    async execute(dto: CheckoutOrderDto): Promise<Order>{
+    async execute(dto: CheckoutOrderDto, token?: string): Promise<Order>{
         const cart = await this.orderRepository.findCartByUserId(dto.userId);
 
         if(!cart || cart.isEmpty()){

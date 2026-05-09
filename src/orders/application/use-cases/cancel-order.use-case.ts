@@ -1,11 +1,11 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { ORDER_RESPOSITORY } from "src/domain/repositories/order-repository.interface";
-import type { IOrderRepository } from "src/domain/repositories/order-repository.interface";
-import { CATALOG_CLIENT } from "src/domain/repositories/catalog-client.interface";
-import type { ICatalogClient } from "src/domain/repositories/catalog-client.interface";
+import { ORDER_RESPOSITORY } from "src/orders/domain/repositories/order-repository.interface";
+import type { IOrderRepository } from "src/orders/domain/repositories/order-repository.interface";
+import { CATALOG_CLIENT } from "src/orders/domain/repositories/catalog-client.interface";
+import type { ICatalogClient } from "src/orders/domain/repositories/catalog-client.interface";
 import { CancelOrderDto } from "../dto/cancel-order.dto";
-import { Order } from "src/domain/entities/order.entity";
-import { InvalidOrderStateException } from "src/domain/entities/invalid-order-state.exception";
+import { Order } from "src/orders/domain/entities/order.entity";
+import { InvalidOrderStateException } from "src/orders/domain/entities/invalid-order-state.exception";
 
 //esta clase es un caso de uso que se encarga de cancelar una orden, verificando que la orden exista, que pertenezca 
 // al usuario que realiza la solicitud y que se encuentre en un estado válido para ser cancelada.

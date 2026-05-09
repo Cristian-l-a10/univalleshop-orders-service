@@ -1,13 +1,13 @@
 import { InjectModel } from "@nestjs/mongoose";
 import { Injectable } from "@nestjs/common";
 import { Model } from "mongoose";
-import type { IOrderRepository } from "src/domain/repositories/order-repository.interface";
+import type { IOrderRepository } from "src/orders/domain/repositories/order-repository.interface";
 import { CartDocument, OrderDocument } from "./order.schema";
-import { Cart } from "src/domain/entities/cart.entity";
-import { Order } from "src/domain/entities/order.entity";
-import { OrderItem } from "src/domain/entities/order-item.entity";
-import { Money } from "src/domain/value-objects/money.vo";
-import { OrderStatus, OrderStatusVO} from "src/domain/value-objects/order-status.vo";
+import { Cart } from "src/orders/domain/entities/cart.entity";
+import { Order } from "src/orders/domain/entities/order.entity";
+import { OrderItem } from "src/orders/domain/entities/order-item.entity";
+import { Money } from "src/orders/domain/value-objects/money.vo";
+import { OrderStatus, OrderStatusVO} from "src/orders/domain/value-objects/order-status.vo";
 import { CartMapper } from "../mappers/cart.mapper";
 import { OrderMapper } from "../mappers/order.mapper";
 
